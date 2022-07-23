@@ -2,8 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import {useEffect, useState} from "react";
 
-function App() {
+const API = "https://movienodejass.herokuapp.com/";
 
+function App() {
 	// const mobiles = [
 	// 	{
 	// 		model: "OnePlus 9 5G",
@@ -28,7 +29,7 @@ function App() {
 	// ];
   const [mobiles, setMobiles] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/mobiles")
+    fetch(`${API}/mobiles`)
     .then((data) => data.json())
     .then((mbs) => setMobiles(mbs));
   },[]);
